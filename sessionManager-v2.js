@@ -130,10 +130,8 @@
           var data;
           try {
             data = JSON.parse(oReq.responseText);
-            console.log(data.id)
-            debugger
             if (data && data.id) {
-              const messageEvent = new MessageEvent('copeApiSessionIdEvent', {
+              const messageEvent = new MessageEvent('coreApiSessionIdEvent', {
                 data: data.id,
                 origin: window.location.origin
               });
