@@ -130,6 +130,8 @@
           var data;
           try {
             data = JSON.parse(oReq.responseText);
+            console.log(data.id)
+            debugger
             if (data && data.id) {
               window.postMessage({ id: data.id }, '*');
             }
