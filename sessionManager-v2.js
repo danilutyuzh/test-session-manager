@@ -133,7 +133,11 @@
             console.log(data.id)
             debugger
             if (data && data.id) {
-              window.postMessage({ id: data.id }, '*');
+              const messageEvent = new MessageEvent('copeApiSessionIdEvent', {
+                data: data.id,
+                origin: window.location.origin
+              });
+              window.postMessage(messageEvent, '*');
             }
           } catch (e) {
             console.log('Data is not json. Error is ', e);
